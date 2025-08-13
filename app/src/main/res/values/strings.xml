@@ -1,8 +1,9 @@
 <resources>
-    <string name="app_name">ecommerceapp</string>
+    <string name="app_name">emarket</string>
     <string name="e_market">E-Market</string>
     <string name="filters">Filters:</string>
     <string name="search">Search</string>
     <string name="select_filter">Select Filter</string>
     <string name="add_to_cart">Add to Cart</string>
+    <string name="price">Price:</string>
 </resources>

@@ -2,6 +2,8 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    id("kotlin-parcelize")
+    alias(libs.plugins.navigation)
 }
 
 android {
@@ -75,6 +77,13 @@ dependencies {
     // Gson Converter
     implementation "com.squareup.retrofit2:converter-gson:2.11.0"
 
-    // OkHttp Logging Interceptor 
+    // OkHttp Logging Interceptor
     implementation "com.squareup.okhttp3:logging-interceptor:4.12.0"
+
+    implementation("io.coil-kt:coil:2.4.0")
+
+    // Navigation
+    implementation "androidx.navigation:navigation-fragment-ktx:2.7.5"
+    implementation "androidx.navigation:navigation-ui-ktx:2.7.5"
+
 }

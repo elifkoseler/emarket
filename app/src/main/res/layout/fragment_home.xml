@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:background="@color/primary_blue"
         android:gravity="start"
-        android:paddingTop="25dp"
+        android:paddingTop="35dp"
         android:paddingBottom="16dp"
         android:paddingHorizontal="16dp"
         android:text="@string/e_market"

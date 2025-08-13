@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.elif.emarket.databinding.FragmentHomeBinding
 import com.elif.emarket.ui.home.adapter.ProductAdapter
@@ -19,7 +20,10 @@ class HomeFragment : Fragment() {
 
     private val viewModel: HomeViewModel by viewModels()
     private val adapter = ProductAdapter(
-        onProductClick = {},
+        onProductClick = { selectedProduct ->
+            val action = HomeFragmentDirections.actionHomeFragmentToProductFragment(selectedProduct)
+            findNavController().navigate(action)
+        },
         onAddToCartClick = {},
         onFavoriteClick = {}
     )
