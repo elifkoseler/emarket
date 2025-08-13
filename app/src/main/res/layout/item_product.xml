@@ -80,7 +80,8 @@
                 android:backgroundTint="@color/primary_blue"
                 android:text="@string/add_to_cart"
                 android:textColor="@color/white"
-                android:textSize="14sp"
+                android:textAllCaps="false"
+                android:textSize="@dimen/text_size_small"
                 android:paddingVertical="8dp" />
 
         </LinearLayout>

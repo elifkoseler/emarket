@@ -10,6 +10,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.elif.emarket.databinding.FragmentHomeBinding
+import com.elif.emarket.ui.cart.CartManager
 import com.elif.emarket.ui.home.adapter.ProductAdapter
 import kotlinx.coroutines.launch
 
@@ -24,7 +25,9 @@ class HomeFragment : Fragment() {
             val action = HomeFragmentDirections.actionHomeFragmentToProductFragment(selectedProduct)
             findNavController().navigate(action)
         },
-        onAddToCartClick = {},
+        onAddToCartClick = { selectedProduct ->
+            CartManager.addItem(selectedProduct)
+        },
         onFavoriteClick = {}
     )
 

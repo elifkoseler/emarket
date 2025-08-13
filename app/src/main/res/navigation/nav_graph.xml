@@ -2,10 +2,10 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/navigation_home">
 
     <fragment
-        android:id="@+id/homeFragment"
+        android:id="@+id/navigation_home"
         android:name="com.elif.emarket.ui.home.HomeFragment"
         android:label="Home">
         <action
@@ -18,10 +18,10 @@
 <!--        android:name="com.elif.emarket.ui.categories.CategoriesFragment"-->
 <!--        android:label="Categories" />-->
 
-<!--    <fragment-->
-<!--        android:id="@+id/cartFragment"-->
-<!--        android:name="com.elif.emarket.ui.cart.CartFragment"-->
-<!--        android:label="Cart" />-->
+    <fragment
+        android:id="@+id/navigation_cart"
+        android:name="com.elif.emarket.ui.cart.CartFragment"
+        android:label="Cart" />
 
 <!--    <fragment-->
 <!--        android:id="@+id/profileFragment"-->

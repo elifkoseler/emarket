@@ -4,11 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import coil.load
 import com.elif.emarket.databinding.FragmentProductBinding
 import com.elif.emarket.domain.entity.Product
+import com.elif.emarket.ui.cart.CartManager
 
 class ProductFragment : Fragment() {
 
@@ -43,7 +45,8 @@ class ProductFragment : Fragment() {
         tvPrice.text = "${product.price} ₺"
 
         btnAddToCart.setOnClickListener {
-            // TODO: Sepete ekleme işlemi
+            CartManager.addItem(product)
+            Toast.makeText(requireContext(), "${product.name} added to cart!", Toast.LENGTH_SHORT).show()
         }
     }
 

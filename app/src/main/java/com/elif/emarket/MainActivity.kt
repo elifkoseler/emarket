@@ -24,7 +24,21 @@ class MainActivity : AppCompatActivity() {
         try {
             val navController = findNavController(R.id.nav_host_fragment)
             binding.bottomNavigation.setupWithNavController(navController)
-        } catch (_: IllegalStateException) {
+
+            binding.bottomNavigation.setOnItemSelectedListener { menuItem ->
+                when (menuItem.itemId) {
+                    R.id.navigation_home -> {
+                        navController.navigate(R.id.navigation_home)
+                        true
+                    }
+                    R.id.navigation_cart -> {
+                        navController.navigate(R.id.navigation_cart)
+                        true
+                    }
+                    else -> false
+                }
+            }
+        } catch (e: IllegalStateException) {
             binding.root.postDelayed({
                 setupBottomNavigation()
             }, 100)

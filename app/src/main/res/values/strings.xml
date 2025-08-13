@@ -6,4 +6,9 @@
     <string name="select_filter">Select Filter</string>
     <string name="add_to_cart">Add to Cart</string>
     <string name="price">Price:</string>
+    <string name="plus">+</string>
+    <string name="minus">-</string>
+    <string name="total">Total:</string>
+    <string name="complete">Complete</string>
+    <string name="your_cart_is_empty">Your cart is empty</string>
 </resources>

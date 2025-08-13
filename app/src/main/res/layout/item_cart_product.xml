@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingVertical="12dp"
+    android:weightSum="1">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.6"
+        android:layout_marginStart="@dimen/margin_large"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvProductName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Samsung"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_small16" />
+
+        <TextView
+            android:id="@+id/tvProductPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12.000 ₺"
+            android:textColor="@color/primary_blue"
+            android:textSize="@dimen/text_size_small" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.4"
+        android:gravity="center"
+        android:layout_marginEnd="@dimen/margin_large"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnDecrease"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:backgroundTint="@color/gray_light"
+            android:text="@string/minus"
+            android:textSize="@dimen/text_size_small"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/tvQuantity"
+            android:layout_width="50dp"
+            android:layout_height="45dp"
+            android:background="@color/primary_blue"
+            android:gravity="center"
+            android:text="2"
+            android:textColor="@android:color/white"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/btnIncrease"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:backgroundTint="@color/gray_light"
+            android:text="@string/plus"
+            android:textSize="@dimen/text_size_small"
+            android:textColor="@color/black"/>
+    </LinearLayout>
+
+</LinearLayout>

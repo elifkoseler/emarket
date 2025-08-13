@@ -6,23 +6,20 @@
     android:layout_height="match_parent"
     android:background="@color/white">
 
-    <!-- Top Bar with App Name -->
-    <TextView
+    <!-- AppBar -->
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/tvAppName"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:paddingTop="@dimen/margin_xlarge"
+        android:paddingBottom="@dimen/margin_medium"
+        android:paddingHorizontal="@dimen/margin_medium"
         android:background="@color/primary_blue"
-        android:gravity="start"
-        android:paddingTop="35dp"
-        android:paddingBottom="16dp"
-        android:paddingHorizontal="16dp"
-        android:text="@string/e_market"
-        android:textColor="@color/white"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:titleTextColor="@android:color/white"
+        app:title="@string/e_market" />
 
     <!-- Search Bar -->
     <androidx.cardview.widget.CardView
