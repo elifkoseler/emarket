@@ -18,6 +18,8 @@ class CartRepositoryImpl(
 
     override suspend fun insertAll(productList: List<CartItem>) = cartDao.insertAll(productList.map { it.toEntity() })
 
+    override suspend fun insertProduct(product: CartItem) = cartDao.insertCartItem(product.toEntity())
+
     override suspend fun updateProduct(product: CartItem) = cartDao.updateCartItem(product.toEntity())
 
     override suspend fun deleteProduct(product: CartItem) = cartDao.deleteCartItem(product.toEntity())

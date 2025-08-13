@@ -51,4 +51,11 @@ class CartAdapter(
         notifyDataSetChanged()
         onCartUpdated()
     }
+
+    @SuppressLint("NotifyDataSetChanged")
+    fun updateList(newList: MutableList<CartItem>) {
+        cartItems.clear()
+        cartItems.addAll(newList)
+        notifyDataSetChanged()
+    }
 }

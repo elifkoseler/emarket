@@ -6,11 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import coil.load
 import com.elif.emarket.databinding.FragmentProductBinding
 import com.elif.emarket.domain.entity.Product
 import com.elif.emarket.ui.cart.CartManager
+import com.elif.emarket.ui.home.HomeViewModel
+import kotlin.getValue
 
 class ProductFragment : Fragment() {
 
@@ -18,6 +21,7 @@ class ProductFragment : Fragment() {
     private val binding get() = _binding!!
 
     private lateinit var product: Product
+    private val viewModel: ProductViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,6 +50,7 @@ class ProductFragment : Fragment() {
 
         btnAddToCart.setOnClickListener {
             CartManager.addItem(product)
+            viewModel.saveProductToLocal(product, requireContext())
             Toast.makeText(requireContext(), "${product.name} added to cart!", Toast.LENGTH_SHORT).show()
         }
     }

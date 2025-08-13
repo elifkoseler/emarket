@@ -27,6 +27,7 @@ class HomeFragment : Fragment() {
         },
         onAddToCartClick = { selectedProduct ->
             CartManager.addItem(selectedProduct)
+            viewModel.saveProductToLocal(selectedProduct, requireContext())
         },
         onFavoriteClick = {}
     )

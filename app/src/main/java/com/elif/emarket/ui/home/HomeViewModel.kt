@@ -1,11 +1,15 @@
 package com.elif.emarket.ui.home
 
+import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.elif.emarket.data.local.AppDatabase
 import com.elif.emarket.data.remote.RetrofitClient
+import com.elif.emarket.data.repository.CartRepositoryImpl
 import com.elif.emarket.data.repository.ProductRepositoryImpl
 import com.elif.emarket.domain.entity.Product
 import com.elif.emarket.domain.usecase.GetProductsUseCase
+import com.elif.emarket.domain.usecase.InsertProductToLocalUseCase
 
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -24,6 +28,15 @@ class HomeViewModel : ViewModel() {
         viewModelScope.launch {
             val result = getProductsUseCase()
             _products.value = result
+        }
+    }
+
+    fun saveProductToLocal(product: Product, context: Context) {
+        val insertProductToLocalUseCase = InsertProductToLocalUseCase(
+            CartRepositoryImpl(AppDatabase.getInstance(context).cartDao())
+        )
+        viewModelScope.launch {
+            insertProductToLocalUseCase(product)
         }
     }
 }

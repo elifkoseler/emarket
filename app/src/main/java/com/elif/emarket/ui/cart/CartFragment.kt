@@ -32,17 +32,23 @@ class CartFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val cartItems = CartManager.getItems().toMutableList()
-
-        cartAdapter = CartAdapter(cartItems) {
-            updateTotalPrice(cartItems)
+        cartAdapter = CartAdapter(mutableListOf()) {
+            updateTotalPrice(CartManager.getItems())
         }
-
         binding.rvCartItems.adapter = cartAdapter
-        updateTotalPrice(cartItems)
+
+        viewModel.cartItems.observe(viewLifecycleOwner) { savedItems ->
+            CartManager.setItems(savedItems)
+            cartAdapter.updateList(savedItems.toMutableList())
+            updateTotalPrice(savedItems)
+        }
 
         binding.btnComplete.setOnClickListener {
             Toast.makeText(requireContext(), "Order Completed!", Toast.LENGTH_SHORT).show()
+            CartManager.clear()
+            viewModel.clearCart()
+            cartAdapter.updateList(mutableListOf())
+            updateTotalPrice(mutableListOf())
         }
     }
 
