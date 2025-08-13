@@ -2,7 +2,6 @@ package com.elif.emarket.domain.entity
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
-import retrofit2.http.Query
 
 @Parcelize
 data class Product(

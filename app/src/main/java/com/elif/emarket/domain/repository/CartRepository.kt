@@ -1,6 +1,5 @@
 package com.elif.emarket.domain.repository
 
-import com.elif.emarket.data.local.entity.toEntity
 import com.elif.emarket.domain.entity.CartItem
 import kotlinx.coroutines.flow.Flow
 

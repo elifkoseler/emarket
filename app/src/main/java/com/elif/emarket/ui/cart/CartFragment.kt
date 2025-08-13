@@ -13,7 +13,6 @@ import com.elif.emarket.domain.entity.CartItem
 import com.elif.emarket.ui.cart.adapter.CartAdapter
 
 class CartFragment : Fragment() {
-
     private lateinit var binding: FragmentCartBinding
     private lateinit var cartAdapter: CartAdapter
     private lateinit var viewModel: CartViewModel

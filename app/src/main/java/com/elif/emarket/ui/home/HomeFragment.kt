@@ -15,7 +15,6 @@ import com.elif.emarket.ui.home.adapter.ProductAdapter
 import kotlinx.coroutines.launch
 
 class HomeFragment : Fragment() {
-
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
 

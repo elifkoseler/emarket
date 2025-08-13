@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
 import com.elif.emarket.databinding.ItemProductBinding
 import com.elif.emarket.domain.entity.Product
 
@@ -36,8 +37,9 @@ class ProductAdapter(
                 tvProductName.text = product.name
                 tvPrice.text = "${product.price.toInt()} ₺"
                 
-                // TODO: Load product image using Glide or Coil
-                // Glide.with(ivProduct).load(product.imageUrl).into(ivProduct)
+                ivProduct.load(product.imageUrl) {
+                    crossfade(true)
+                }
                 
                 // Set favorite icon state
                 if (product.isFavorite) {

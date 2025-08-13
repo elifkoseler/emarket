@@ -1,7 +1,6 @@
 package com.elif.emarket.data.repository
 
 import com.elif.emarket.data.local.dao.CartDao
-import com.elif.emarket.data.local.entity.CartItemEntity
 import com.elif.emarket.data.local.entity.toDomain
 import com.elif.emarket.data.local.entity.toEntity
 import com.elif.emarket.domain.entity.CartItem
