@@ -6,22 +6,28 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.elif.emarket.data.local.AppDatabase
+import com.elif.emarket.data.repository.CartRepositoryImpl
 import com.elif.emarket.databinding.FragmentCartBinding
 import com.elif.emarket.domain.entity.CartItem
 import com.elif.emarket.ui.cart.adapter.CartAdapter
 
 class CartFragment : Fragment() {
 
-    private var _binding: FragmentCartBinding? = null
-    private val binding get() = _binding!!
-
+    private lateinit var binding: FragmentCartBinding
     private lateinit var cartAdapter: CartAdapter
+    private lateinit var viewModel: CartViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?,
+        savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentCartBinding.inflate(inflater, container, false)
+        binding = FragmentCartBinding.inflate(inflater, container, false)
+
+        val dao = AppDatabase.getInstance(requireContext()).cartDao()
+        val repository = CartRepositoryImpl(dao)
+        viewModel = CartViewModel(repository)
+
         return binding.root
     }
 
@@ -55,6 +61,25 @@ class CartFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
-        _binding = null
+        viewModel.saveCartToRoom(CartManager.getItems())
+    }
+
+    override fun onResume() {
+        super.onResume()
+        viewModel.loadCartFromRoom().observe(viewLifecycleOwner) { savedItems ->
+            if (savedItems.isNotEmpty()) {
+                CartManager.setItems(savedItems)
+                cartAdapter = CartAdapter(savedItems.toMutableList()) {
+                    updateTotalPrice(savedItems)
+                }
+                binding.rvCartItems.adapter = cartAdapter
+                updateTotalPrice(savedItems)
+            }
+        }
+    }
+
+    override fun onPause() {
+        super.onPause()
+        viewModel.saveCartToRoom(CartManager.getItems())
     }
 }

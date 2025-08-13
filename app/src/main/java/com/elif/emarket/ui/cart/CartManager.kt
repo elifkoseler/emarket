@@ -17,6 +17,11 @@ object CartManager {
 
     fun getItems(): List<CartItem> = cartItems
 
+    fun setItems(items: List<CartItem>) {
+        cartItems.clear()
+        cartItems.addAll(items)
+    }
+
     fun clear() = cartItems.clear()
 
     fun updateItemQuantity(productName: String, newQuantity: Int) {

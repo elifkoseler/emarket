@@ -6,12 +6,12 @@ import retrofit2.http.Query
 
 @Parcelize
 data class Product(
-    val id: Int,
+    val id: Int? = null,
     val name: String,
     val description: String = "",
     val brand: String = "",
-    val price: Double,
-    val imageUrl: String,
+    val price: Double = 0.0,
+    val imageUrl: String = "",
     val isFavorite: Boolean = false,
     val quantity: Int = 0
 ) : Parcelable
