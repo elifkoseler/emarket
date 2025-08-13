@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
+import com.elif.emarket.R
 import com.elif.emarket.databinding.ItemProductBinding
 import com.elif.emarket.domain.entity.Product
 
@@ -32,37 +33,42 @@ class ProductAdapter(
         private val binding: ItemProductBinding
     ) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(product: Product) {
-            binding.apply {
-                tvProductName.text = product.name
-                tvPrice.text = "${product.price.toInt()} ₺"
-                
-                ivProduct.load(product.imageUrl) {
-                    crossfade(true)
+        fun bind(product: Product) = with(binding) {
+            tvProductName.text = product.name
+            tvPrice.text = "${product.price.toInt()} ₺"
+
+            ivProduct.load(product.imageUrl) {
+                crossfade(true)
+            }
+
+            ivFavorite.setImageResource(
+                if (product.isFavorite) R.drawable.star_checked
+                else R.drawable.star_unchecked
+            )
+
+            root.setOnClickListener { onProductClick(product) }
+            btnAddToCart.setOnClickListener { onAddToCartClick(product) }
+
+            ivFavorite.setOnClickListener {
+                val updated = product.copy(isFavorite = !product.isFavorite)
+
+                val newList = this@ProductAdapter.currentList.toMutableList()
+                val idx = newList.indexOfFirst { it.id == updated.id }
+                if (idx != -1) {
+                    newList[idx] = updated
+                    this@ProductAdapter.submitList(newList)
                 }
-                
-                // Set favorite icon state
-                if (product.isFavorite) {
-                    ivFavorite.setImageResource(com.elif.emarket.R.drawable.star_unchecked)
-                } else {
-                    ivFavorite.setImageResource(com.elif.emarket.R.drawable.star_checked)
-                }
-                
-                // Set click listeners
-                root.setOnClickListener { onProductClick(product) }
-                btnAddToCart.setOnClickListener { onAddToCartClick(product) }
-                ivFavorite.setOnClickListener { onFavoriteClick(product) }
+
+                onFavoriteClick(updated)
             }
         }
     }
 
     private class ProductDiffCallback : DiffUtil.ItemCallback<Product>() {
-        override fun areItemsTheSame(oldItem: Product, newItem: Product): Boolean {
-            return oldItem.id == newItem.id
-        }
+        override fun areItemsTheSame(oldItem: Product, newItem: Product): Boolean =
+            oldItem.id == newItem.id
 
-        override fun areContentsTheSame(oldItem: Product, newItem: Product): Boolean {
-            return oldItem == newItem
-        }
+        override fun areContentsTheSame(oldItem: Product, newItem: Product): Boolean =
+            oldItem == newItem
     }
-} 
+}
