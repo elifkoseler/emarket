@@ -77,3 +77,6 @@ This project includes both unit and UI tests to ensure code quality, reliability
 4. Run on an emulator or Android device.
 
 
+[📹 Watch the demo](Screen_recording_20250814_154823.mp4)
+
+
