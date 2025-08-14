@@ -11,8 +11,8 @@ import com.elif.emarket.databinding.ItemProductBinding
 import com.elif.emarket.domain.entity.Product
 
 class ProductAdapter(
-    private val onProductClick: (Product) -> Unit,
-    private val onAddToCartClick: (Product) -> Unit,
+    val onProductClick: (Product) -> Unit,
+    val onAddToCartClick: (Product) -> Unit,
     private val onFavoriteClick: (Product) -> Unit
 ) : ListAdapter<Product, ProductAdapter.ProductViewHolder>(ProductDiffCallback()) {
 

@@ -15,7 +15,7 @@ import com.elif.emarket.ui.cart.CartManager
 import com.elif.emarket.ui.home.HomeViewModel
 import kotlin.getValue
 
-class ProductFragment : Fragment() {
+open class ProductFragment : Fragment() {
 
     private var _binding: FragmentProductBinding? = null
     private val binding get() = _binding!!

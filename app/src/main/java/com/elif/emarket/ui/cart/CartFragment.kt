@@ -13,7 +13,7 @@ import com.elif.emarket.domain.entity.CartItem
 import com.elif.emarket.ui.cart.adapter.CartAdapter
 
 class CartFragment : Fragment() {
-    private lateinit var binding: FragmentCartBinding
+    lateinit var binding: FragmentCartBinding
     private lateinit var cartAdapter: CartAdapter
     private lateinit var viewModel: CartViewModel
 
@@ -51,7 +51,7 @@ class CartFragment : Fragment() {
         }
     }
 
-    private fun updateTotalPrice(cartItems: List<CartItem>) {
+    fun updateTotalPrice(cartItems: List<CartItem>) {
         binding.tvEmptyCartMessage.visibility = if (cartItems.isEmpty()) View.VISIBLE else View.GONE
         binding.rvCartItems.visibility = if (cartItems.isEmpty()) View.GONE else View.VISIBLE
 

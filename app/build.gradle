@@ -38,6 +38,9 @@ android {
         compose true
         viewBinding true
     }
+    testOptions {
+        unitTests.includeAndroidResources = true
+    }
 }
 
 dependencies {
@@ -50,6 +53,7 @@ dependencies {
     implementation libs.androidx.ui.graphics
     implementation libs.androidx.ui.tooling.preview
     implementation libs.androidx.material3
+    implementation libs.androidx.junit.ktx
     testImplementation libs.junit
     androidTestImplementation libs.androidx.junit
     androidTestImplementation libs.androidx.espresso.core
@@ -103,4 +107,36 @@ dependencies {
 
     implementation "com.github.bumptech.glide:glide:4.16.0"
     annotationProcessor "com.github.bumptech.glide:compiler:4.16.0"
+
+    // Unit Testing
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'org.mockito:mockito-core:5.1.1'
+    testImplementation 'org.mockito:mockito-inline:5.1.1'
+    testImplementation 'io.mockk:mockk:1.13.4'
+    testImplementation 'androidx.arch.core:core-testing:2.2.0'
+
+    // Coroutine Testing
+    testImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4'
+
+    // Android Testing (Instrumented tests)
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    androidTestImplementation 'androidx.test:runner:1.5.2'
+    androidTestImplementation 'androidx.test:rules:1.5.0'
+
+    // Fragment Testing
+    debugImplementation 'androidx.fragment:fragment-testing:1.6.1'
+
+    // Navigation Testing
+    androidTestImplementation 'androidx.navigation:navigation-testing:2.6.0'
+
+    // Robolectric (Unit tests that need Android framework)
+    testImplementation 'org.robolectric:robolectric:4.10.3'
+
+    // Room Testing
+    testImplementation 'androidx.room:room-testing:2.5.0'
+
+    // Truth (Google's fluent assertions library)
+    testImplementation 'com.google.truth:truth:1.1.4'
+    androidTestImplementation 'com.google.truth:truth:1.1.4'
 }
