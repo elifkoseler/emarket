@@ -49,6 +49,7 @@ This project includes both unit and UI tests to ensure code quality, reliability
 - **JUnit 4** – Unit testing framework for Java/Kotlin, used for writing and running test cases.
 - **MockK** – Library for creating mock objects and verifying interactions, making it easier to test isolated components.
 - **Robolectric** – Framework for running Android UI tests without the need for an emulator, enabling faster and more consistent test execution.
+<img width="972" height="278" alt="Screenshot 2025-08-14 at 15 21 17" src="https://github.com/user-attachments/assets/8bf2c4ef-d5d4-49ea-99d8-df0a5b3f46a4" />
 
 ---
 
@@ -59,6 +60,8 @@ This project includes both unit and UI tests to ensure code quality, reliability
 3. **Cart Screen** displays items from Room; quantities and total price are updated live.
 4. **Favorites** toggle changes the icon and updates the product state.
 5. When the app is restarted, the cart is restored from Room automatically.
+<img width="1222" height="346" alt="Screenshot 2025-08-14 at 15 38 04" src="https://github.com/user-attachments/assets/c30bf1c6-8cb3-4f9c-aa47-ff5b587be363" />
+
 
 ---
 
