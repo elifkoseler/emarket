@@ -4,14 +4,14 @@
     android:layout_height="wrap_content"
     android:gravity="center_vertical"
     android:orientation="horizontal"
-    android:paddingVertical="12dp"
+    android:paddingVertical="@dimen/margin_small12"
     android:weightSum="1">
 
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="0.6"
         android:layout_marginStart="@dimen/margin_large"
+        android:layout_weight="0.6"
         android:orientation="vertical">
 
         <TextView
@@ -34,9 +34,9 @@
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_large"
         android:layout_weight="0.4"
         android:gravity="center"
-        android:layout_marginEnd="@dimen/margin_large"
         android:orientation="horizontal">
 
         <Button
@@ -45,8 +45,8 @@
             android:layout_height="50dp"
             android:backgroundTint="@color/gray_light"
             android:text="@string/minus"
-            android:textSize="@dimen/text_size_small"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_small" />
 
         <TextView
             android:id="@+id/tvQuantity"
@@ -56,7 +56,7 @@
             android:gravity="center"
             android:text="2"
             android:textColor="@android:color/white"
-            android:textSize="16sp" />
+            android:textSize="@dimen/text_size_small16" />
 
         <Button
             android:id="@+id/btnIncrease"
@@ -64,8 +64,8 @@
             android:layout_height="50dp"
             android:backgroundTint="@color/gray_light"
             android:text="@string/plus"
-            android:textSize="@dimen/text_size_small"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_small" />
     </LinearLayout>
 
 </LinearLayout>

@@ -11,24 +11,24 @@
         android:id="@+id/tvAppName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:background="@color/primary_blue"
+        android:paddingHorizontal="@dimen/margin_medium"
         android:paddingTop="@dimen/margin_xlarge"
         android:paddingBottom="@dimen/margin_medium"
-        android:paddingHorizontal="@dimen/margin_medium"
-        android:background="@color/primary_blue"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:titleTextColor="@android:color/white"
-        app:title="@string/e_market" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="@string/e_market"
+        app:titleTextColor="@android:color/white" />
 
     <!-- Search Bar -->
     <androidx.cardview.widget.CardView
         android:id="@+id/searchCard"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        app:cardCornerRadius="8dp"
-        app:cardElevation="4dp"
+        android:layout_margin="@dimen/margin_medium"
+        app:cardCornerRadius="@dimen/margin_small"
+        app:cardElevation="@dimen/card_elevation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvAppName">
@@ -38,12 +38,12 @@
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
             android:orientation="horizontal"
-            android:padding="12dp">
+            android:padding="@dimen/margin_small12">
 
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:layout_marginEnd="8dp"
+                android:layout_marginEnd="@dimen/margin_small"
                 android:src="@drawable/ic_search"
                 app:tint="@color/gray_medium" />
 
@@ -56,60 +56,56 @@
                 android:hint="@string/search"
                 android:inputType="text"
                 android:maxLines="1"
-                android:textSize="18sp" />
+                android:textSize="@dimen/text_size_small18" />
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
-    <!-- Filters Section -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/filtersLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginVertical="14dp"
+        android:layout_marginHorizontal="@dimen/margin_medium"
+        android:layout_marginVertical="@dimen/margin_medium"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/searchCard">
 
-        <!-- Sol taraftaki metin -->
         <TextView
             android:id="@+id/tvFilters"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/filters"
             android:textColor="@color/black"
-            android:textSize="18sp"
+            android:textSize="@dimen/text_size_small18"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/btnSelectFilter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/bg_filter_button"
+            android:clickable="true"
+            android:focusable="true"
             android:paddingHorizontal="30dp"
             android:paddingVertical="10dp"
             android:text="@string/select_filter"
             android:textColor="@color/black"
-            android:textSize="14sp"
-            android:clickable="true"
-            android:focusable="true"
+            android:textSize="@dimen/text_size_small"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" />
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <!-- Products RecyclerView -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvProducts"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginHorizontal="@dimen/margin_medium"
+        android:layout_marginVertical="@dimen/margin_medium"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
