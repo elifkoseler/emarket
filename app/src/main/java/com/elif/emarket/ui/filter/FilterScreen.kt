@@ -1,4 +1,3 @@
-
 package com.elif.emarket.ui.filter
 
 import androidx.compose.foundation.background
@@ -23,7 +22,6 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Checkbox
 import androidx.compose.material3.CheckboxDefaults
-import androidx.compose.material3.Divider
 import androidx.compose.material3.DividerDefaults
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
@@ -66,13 +64,11 @@ fun FilterScreen(
         modifier = Modifier
             .fillMaxSize()
             .background(Color.Black.copy(alpha = 0.5f))
-            .clickable { onDismiss() }
-    ) {
+            .clickable { onDismiss() }) {
         Surface(
             modifier = Modifier
                 .fillMaxSize()
-                .clickable { },
-            color = Color.White
+                .clickable { }, color = Color.White
         ) {
             Column(
                 modifier = Modifier.fillMaxSize()
@@ -104,9 +100,7 @@ fun FilterScreen(
                 }
 
                 HorizontalDivider(
-                    Modifier,
-                    DividerDefaults.Thickness,
-                    color = Color.Gray.copy(alpha = 0.3f)
+                    Modifier, DividerDefaults.Thickness, color = Color.Gray.copy(alpha = 0.3f)
                 )
 
                 Column(
@@ -132,16 +126,11 @@ fun FilterScreen(
                                 .fillMaxWidth()
                                 .clickable {
                                     currentFilter = currentFilter.copy(sortBy = option)
-                                }
-                                .padding(vertical = 8.dp),
-                            verticalAlignment = Alignment.CenterVertically
-                        ) {
+                                }, verticalAlignment = Alignment.CenterVertically) {
                             RadioButton(
-                                selected = currentFilter.sortBy == option,
-                                onClick = {
+                                selected = currentFilter.sortBy == option, onClick = {
                                     currentFilter = currentFilter.copy(sortBy = option)
-                                },
-                                colors = RadioButtonDefaults.colors(
+                                }, colors = RadioButtonDefaults.colors(
                                     selectedColor = Color.Blue
                                 )
                             )
@@ -152,9 +141,7 @@ fun FilterScreen(
                                     SortOption.NEW_TO_OLD -> stringResource(R.string.new_to_old)
                                     SortOption.PRICE_HIGH_TO_LOW -> stringResource(R.string.price_high_to_low)
                                     SortOption.PRICE_LOW_TO_HIGH -> stringResource(R.string.price_low_to_high)
-                                },
-                                fontSize = 16.sp,
-                                color = Color.Black
+                                }, fontSize = 16.sp, color = Color.Black
                             )
                         }
                     }
@@ -213,10 +200,7 @@ fun FilterScreen(
                                         } else {
                                             currentFilter.copy(selectedBrands = currentFilter.selectedBrands + brand)
                                         }
-                                    }
-                                    .padding(vertical = 8.dp),
-                                verticalAlignment = Alignment.CenterVertically
-                            ) {
+                                    }, verticalAlignment = Alignment.CenterVertically) {
                                 Checkbox(
                                     checked = brand in currentFilter.selectedBrands,
                                     onCheckedChange = {
@@ -232,9 +216,7 @@ fun FilterScreen(
                                 )
                                 Spacer(modifier = Modifier.width(12.dp))
                                 Text(
-                                    text = brand,
-                                    fontSize = 16.sp,
-                                    color = Color.Black
+                                    text = brand, fontSize = 16.sp, color = Color.Black
                                 )
                             }
                         }
@@ -294,10 +276,7 @@ fun FilterScreen(
                                         } else {
                                             currentFilter.copy(selectedModels = currentFilter.selectedModels + model)
                                         }
-                                    }
-                                    .padding(vertical = 8.dp),
-                                verticalAlignment = Alignment.CenterVertically
-                            ) {
+                                    }, verticalAlignment = Alignment.CenterVertically) {
                                 Checkbox(
                                     checked = model in currentFilter.selectedModels,
                                     onCheckedChange = {
@@ -313,9 +292,7 @@ fun FilterScreen(
                                 )
                                 Spacer(modifier = Modifier.width(12.dp))
                                 Text(
-                                    text = model,
-                                    fontSize = 16.sp,
-                                    color = Color.Black
+                                    text = model, fontSize = 16.sp, color = Color.Black
                                 )
                             }
                         }
