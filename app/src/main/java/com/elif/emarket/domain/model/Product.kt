@@ -1,4 +1,4 @@
-package com.elif.emarket.domain.entity
+package com.elif.emarket.domain.model
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize

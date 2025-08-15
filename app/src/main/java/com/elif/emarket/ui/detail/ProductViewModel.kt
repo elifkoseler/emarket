@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.elif.emarket.data.local.AppDatabase
 import com.elif.emarket.data.repository.CartRepositoryImpl
-import com.elif.emarket.domain.entity.Product
+import com.elif.emarket.domain.model.Product
 import com.elif.emarket.domain.usecase.InsertProductToLocalUseCase
 import kotlinx.coroutines.launch
 

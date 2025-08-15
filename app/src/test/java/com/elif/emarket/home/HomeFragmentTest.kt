@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.elif.emarket.R
-import com.elif.emarket.domain.entity.Product
+import com.elif.emarket.domain.model.Product
 import com.elif.emarket.ui.cart.CartManager
 import com.elif.emarket.ui.home.HomeFragment
 import com.elif.emarket.ui.home.HomeFragmentDirections

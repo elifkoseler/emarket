@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.elif.emarket.databinding.ItemCartProductBinding
-import com.elif.emarket.domain.entity.CartItem
+import com.elif.emarket.domain.model.CartItem
 import com.elif.emarket.ui.cart.CartManager
 
 class CartAdapter(

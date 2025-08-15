@@ -2,7 +2,7 @@ package com.elif.emarket.cart
 
 import android.annotation.SuppressLint
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import com.elif.emarket.domain.entity.CartItem
+import com.elif.emarket.domain.model.CartItem
 import com.elif.emarket.domain.repository.CartRepository
 import com.elif.emarket.ui.cart.CartViewModel
 import io.mockk.coEvery

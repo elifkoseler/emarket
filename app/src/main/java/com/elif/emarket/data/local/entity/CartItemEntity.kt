@@ -2,7 +2,7 @@ package com.elif.emarket.data.local.entity
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.elif.emarket.domain.entity.CartItem
+import com.elif.emarket.domain.model.CartItem
 
 @Entity(tableName = "cart_items")
 data class CartItemEntity(

@@ -4,8 +4,7 @@ import android.content.Context
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.elif.emarket.data.local.AppDatabase
 import com.elif.emarket.data.local.dao.CartDao
-import com.elif.emarket.domain.entity.CartItem
-import com.elif.emarket.domain.entity.Product
+import com.elif.emarket.domain.model.Product
 import com.elif.emarket.domain.repository.CartRepository
 import com.elif.emarket.domain.usecase.GetProductsUseCase
 import com.elif.emarket.domain.usecase.InsertProductToLocalUseCase

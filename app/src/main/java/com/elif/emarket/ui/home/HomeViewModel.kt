@@ -7,11 +7,11 @@ import com.elif.emarket.data.local.AppDatabase
 import com.elif.emarket.data.remote.RetrofitClient
 import com.elif.emarket.data.repository.CartRepositoryImpl
 import com.elif.emarket.data.repository.ProductRepositoryImpl
-import com.elif.emarket.domain.entity.Product
+import com.elif.emarket.domain.model.Product
 import com.elif.emarket.domain.usecase.GetProductsUseCase
 import com.elif.emarket.domain.usecase.InsertProductToLocalUseCase
-import com.elif.emarket.ui.filter.FilterData
-import com.elif.emarket.ui.filter.SortOption
+import com.elif.emarket.domain.model.FilterData
+import com.elif.emarket.domain.model.SortOption
 
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow

@@ -1,4 +1,4 @@
-package com.elif.emarket.domain.entity
+package com.elif.emarket.domain.model
 
 data class CartItem(
     val productName: String,

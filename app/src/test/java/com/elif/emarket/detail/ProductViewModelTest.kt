@@ -6,7 +6,7 @@ import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.elif.emarket.data.local.AppDatabase
 import com.elif.emarket.data.local.dao.CartDao
 import com.elif.emarket.data.repository.CartRepositoryImpl
-import com.elif.emarket.domain.entity.Product
+import com.elif.emarket.domain.model.Product
 import com.elif.emarket.domain.usecase.InsertProductToLocalUseCase
 import com.elif.emarket.ui.detail.ProductViewModel
 import io.mockk.clearAllMocks

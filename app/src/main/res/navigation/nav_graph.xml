@@ -34,7 +34,7 @@
         android:label="Product">
         <argument
             android:name="product"
-            app:argType="com.elif.emarket.domain.entity.Product"
+            app:argType="com.elif.emarket.domain.model.Product"
             app:nullable="false" />
     </fragment>
 

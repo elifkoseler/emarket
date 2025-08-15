@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
-import com.elif.emarket.domain.entity.CartItem
+import com.elif.emarket.domain.model.CartItem
 import com.elif.emarket.domain.repository.CartRepository
 import kotlinx.coroutines.launch
 

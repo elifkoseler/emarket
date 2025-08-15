@@ -1,7 +1,7 @@
 package com.elif.emarket.ui.cart
 
-import com.elif.emarket.domain.entity.CartItem
-import com.elif.emarket.domain.entity.Product
+import com.elif.emarket.domain.model.CartItem
+import com.elif.emarket.domain.model.Product
 
 object CartManager {
     private val cartItems = mutableListOf<CartItem>()

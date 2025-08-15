@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.elif.emarket.R
 import com.elif.emarket.databinding.ItemProductBinding
-import com.elif.emarket.domain.entity.Product
+import com.elif.emarket.domain.model.Product
 
 class ProductAdapter(
     val onProductClick: (Product) -> Unit,

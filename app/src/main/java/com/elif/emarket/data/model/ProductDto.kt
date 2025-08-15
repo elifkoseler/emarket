@@ -1,6 +1,6 @@
 package com.elif.emarket.data.model
 
-import com.elif.emarket.domain.entity.Product
+import com.elif.emarket.domain.model.Product
 
 data class ProductDto(
     val id: String,

@@ -1,6 +1,6 @@
 package com.elif.emarket.domain.repository
 
-import com.elif.emarket.domain.entity.CartItem
+import com.elif.emarket.domain.model.CartItem
 import kotlinx.coroutines.flow.Flow
 
 interface CartRepository {

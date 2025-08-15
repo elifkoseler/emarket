@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import com.elif.emarket.data.local.AppDatabase
 import com.elif.emarket.data.repository.CartRepositoryImpl
 import com.elif.emarket.databinding.FragmentCartBinding
-import com.elif.emarket.domain.entity.CartItem
+import com.elif.emarket.domain.model.CartItem
 import com.elif.emarket.ui.cart.adapter.CartAdapter
 
 class CartFragment : Fragment() {

@@ -1,7 +1,7 @@
 package com.elif.emarket.domain.usecase
 
-import com.elif.emarket.domain.entity.CartItem
-import com.elif.emarket.domain.entity.Product
+import com.elif.emarket.domain.model.CartItem
+import com.elif.emarket.domain.model.Product
 import com.elif.emarket.domain.repository.CartRepository
 
 class InsertProductToLocalUseCase(private val repository: CartRepository) {

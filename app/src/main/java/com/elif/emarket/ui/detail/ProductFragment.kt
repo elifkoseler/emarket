@@ -10,9 +10,8 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import coil.load
 import com.elif.emarket.databinding.FragmentProductBinding
-import com.elif.emarket.domain.entity.Product
+import com.elif.emarket.domain.model.Product
 import com.elif.emarket.ui.cart.CartManager
-import com.elif.emarket.ui.home.HomeViewModel
 import kotlin.getValue
 
 open class ProductFragment : Fragment() {

@@ -1,6 +1,5 @@
-package com.elif.emarket.ui.filter
+package com.elif.emarket.domain.model
 
-// FilterData.kt
 data class FilterData(
     val sortBy: SortOption = SortOption.OLD_TO_NEW,
     val selectedBrands: Set<String> = emptySet(),

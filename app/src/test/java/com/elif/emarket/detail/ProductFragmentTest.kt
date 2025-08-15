@@ -11,7 +11,7 @@ import androidx.navigation.Navigation
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.elif.emarket.R
 import com.elif.emarket.databinding.FragmentProductBinding
-import com.elif.emarket.domain.entity.Product
+import com.elif.emarket.domain.model.Product
 import com.elif.emarket.ui.cart.CartManager
 import com.elif.emarket.ui.detail.ProductFragment
 import com.elif.emarket.ui.detail.ProductViewModel
