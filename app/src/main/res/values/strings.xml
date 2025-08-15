@@ -11,4 +11,12 @@
     <string name="total">Total:</string>
     <string name="complete">Complete</string>
     <string name="your_cart_is_empty">Your cart is empty</string>
+    <string name="filter">Filter</string>
+    <string name="model">Model</string>
+    <string name="sort_by">Sort By</string>
+    <string name="brand">Brand</string>
+    <string name="old_to_new">Old to new</string>
+    <string name="new_to_old">New to old</string>
+    <string name="price_high_to_low">Price high to low</string>
+    <string name="price_low_to_high">Price low to High</string>
 </resources>

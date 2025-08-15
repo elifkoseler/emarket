@@ -12,5 +12,7 @@ data class Product(
     val price: Double = 0.0,
     val imageUrl: String = "",
     val isFavorite: Boolean = false,
-    val quantity: Int = 0
+    val quantity: Int = 0,
+    val createdAt: String? = "",
+    val model: String? = ""
 ) : Parcelable

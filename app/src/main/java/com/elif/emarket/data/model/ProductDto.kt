@@ -8,7 +8,9 @@ data class ProductDto(
     val description: String,
     val brand: String,
     val price: String,
-    val image: String
+    val image: String,
+    val createdAt: String,
+    val model: String,
 )
 
 fun ProductDto.toDomain(): Product {
@@ -18,6 +20,8 @@ fun ProductDto.toDomain(): Product {
         description = description,
         brand = brand,
         price = price.toDoubleOrNull() ?: 0.0,
-        imageUrl = image
+        imageUrl = image,
+        createdAt = createdAt,
+        model = model
     )
 }
